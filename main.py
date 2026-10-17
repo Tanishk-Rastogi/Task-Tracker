@@ -1,5 +1,5 @@
 from load_and_save import load_tasks
-from operations import add_task, view_tasks, mark_task_complete, delete_task
+from operations import add_task, view_tasks, mark_task_complete, delete_task, edit_task
 def main():
     tasks = load_tasks()
     while True:
@@ -8,9 +8,10 @@ def main():
         print("2. View Tasks")
         print("3. Mark Task as Complete")
         print("4. Delete Task")
-        print("5. Exit")
+        print("5. Edit Task")
+        print("6. Exit")
 
-        choice = input("Enter your choice (1-5): ")
+        choice = input("Enter your choice (1-6): ")
 
         if choice == "1":
             add_task(tasks)
@@ -21,6 +22,8 @@ def main():
         elif choice == "4":
             delete_task(tasks)
         elif choice == "5":
+            edit_task(tasks)
+        elif choice == "6":
             print("Exiting the program. Goodbye!")
             break
         else:
